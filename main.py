@@ -55,3 +55,14 @@ pixel_data = {
 # Request for creat a pixel in graph
         # response = requests.post(url=pixel_creation_endpoint, json=pixel_data, headers=headers)
         # print(response.text)
+
+update_endpoint = f'{pixela_endpoint}/{PIXELA_USERNAME}/graphs/{GRAPH_ID}/{today.strftime('%Y%m%d')}'
+
+new_pixel_data = {
+    'quantity': '225'
+}
+
+# Request for put a pixel in graph
+        # response = requests.put(url=update_endpoint, json=new_pixel_data, headers=headers)
+        # print(response.text)
+
