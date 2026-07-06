@@ -49,7 +49,7 @@ today = datetime.now()
 
 pixel_data = {
     'date': today.strftime('%Y%m%d'),
-    'quantity': '100',
+    'quantity': input('How many pushups did you did today ?: '),
 }
 
 # Request for creat a pixel in graph
@@ -62,7 +62,12 @@ new_pixel_data = {
     'quantity': '225'
 }
 
-# Request for put a pixel in graph
+# Request for update a pixel in graph
         # response = requests.put(url=update_endpoint, json=new_pixel_data, headers=headers)
         # print(response.text)
 
+delete_endpoint = f'{pixela_endpoint}/{PIXELA_USERNAME}/graphs/{GRAPH_ID}/{today.strftime('%Y%m%d')}'
+
+# Request for delete a pixel in graph
+        # response = requests.delete(url=delete_endpoint, headers=headers)
+        # print(response.text)
