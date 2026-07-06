@@ -35,10 +35,20 @@ headers = {
     'X-USER-TOKEN': PIXELA_TOKEN,
 }
 
+# Request for create a graphic
+        # response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
+        #print(response.text)
+
+pixel_creation_endpoint = f'{pixela_endpoint}/{PIXELA_USERNAME}/graphs/{GRAPH_ID}'
+
+pixel_data = {
+    'date': '20260706',
+    'quantity': '100',
+}
+
 response = requests.post(
-    url=graph_endpoint,
-    json=graph_config,
+    url=pixel_creation_endpoint,
+    json=pixel_data,
     headers=headers,
 )
-
 print(response.text)
