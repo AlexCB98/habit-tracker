@@ -1,6 +1,7 @@
 import requests
 import os
 from dotenv import load_dotenv
+from datetime import datetime
 
 load_dotenv()
 
@@ -41,14 +42,16 @@ headers = {
 
 pixel_creation_endpoint = f'{pixela_endpoint}/{PIXELA_USERNAME}/graphs/{GRAPH_ID}'
 
+# Any day
+    # today = datetime(year=any_year, month=any_month, day=any_day)
+
+today = datetime.now()
+
 pixel_data = {
-    'date': '20260706',
+    'date': today.strftime('%Y%m%d'),
     'quantity': '100',
 }
 
-response = requests.post(
-    url=pixel_creation_endpoint,
-    json=pixel_data,
-    headers=headers,
-)
-print(response.text)
+# Request for creat a pixel in graph
+        # response = requests.post(url=pixel_creation_endpoint, json=pixel_data, headers=headers)
+        # print(response.text)
